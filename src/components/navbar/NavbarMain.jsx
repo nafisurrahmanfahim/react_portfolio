@@ -11,7 +11,7 @@ const NavbarMain = () => {
         setMenuOpen(!menuOpen);
     }
     return (
-            <nav className='py-4 md:max-w-[1300px] sm:max-w-[500px] mx-auto px-4 w-full fixed md:left-[50%] md:-translate-x-[50%] z-20 flex gap-4 mt-2'>
+            <nav className='py-4 md:max-w-[1300px] sm:max-w-[450px] mx-auto px-4 w-full fixed md:left-[50%] md:-translate-x-[50%] z-20 flex gap-4 mt-2'>
                 <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-6 rounded-r-full rounded-l-full border-[0
             .5px] border-orange">
                     <NavbarLogo />
