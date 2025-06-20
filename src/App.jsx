@@ -12,6 +12,7 @@ import ProjectsMain from './components/projectsSection/ProjectsMain'
 const App = () => {
   return (
     <main className='font-josefin'>
+      <NavbarMain/>
       <HeroMain/>
       <SubHeroSection/>
       <AboutMeMain/>
