@@ -1,10 +1,12 @@
 import React from 'react'
 import AboutMeText from './AboutMeText'
 import AboutMeImage from './AboutMeImage'
+import Container from '../Container'
 
 const AboutMeMain = () => {
     return (
-        <div className='flex md:flex-row sm:flex-col gap-12 px-4 max-w-[1200px] mx-auto mt-[100px] justify-between items-center'>
+        <Container>
+        <div className='flex md:flex-row sm:flex-col gap-12 px-4 max-w-[1300px] mx-auto mt-[100px] justify-between items-center'>
             <div className="">
                 <AboutMeText />
             </div>
@@ -12,6 +14,7 @@ const AboutMeMain = () => {
                 <AboutMeImage />
             </div>
         </div>
+        </Container>
     )
 }
 
