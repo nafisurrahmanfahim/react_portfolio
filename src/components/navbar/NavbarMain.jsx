@@ -3,29 +3,40 @@ import NavbarLogo from './NavbarLogo'
 import NavbarLinks from './NavbarLinks'
 import NavbarBtn from './NavbarBtn'
 import { RxHamburgerMenu } from "react-icons/rx";
-import Container from '../Container';
 
 const NavbarMain = () => {
-    let [menuOpen, setMenuOpen] = useState(false);
-    let toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    }
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
-            <nav className='py-4 md:max-w-[1300px] sm:max-w-[450px] mx-auto md:px-4 w-full fixed md:left-[50%] md:-translate-x-[50%] z-20 flex gap-4 mt-2'>
-                <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-6 rounded-r-full rounded-l-full border-[0
-            .5px] border-orange">
-                    <NavbarLogo />
-                    <div className={`${menuOpen ? 'sm:block' : 'sm:hidden'} lg:block`}>
-                        <NavbarLinks />
-                    </div>
+        <nav className='fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1300px] z-50 px-2'>
+            <div className="flex items-center justify-between bg-black rounded-full border border-orange py-3 px-6 shadow-md w-full relative">
+                
+                {/* Left: Logo */}
+                <NavbarLogo />
+
+                {/* Center: Links */}
+                <div className={`hidden lg:flex items-center gap-6`}>
+                    <NavbarLinks />
+                </div>
+
+                {/* Right: CTA Button */}
+                <div className="hidden lg:block">
                     <NavbarBtn />
                 </div>
-                <div className="flex lg:hidden p-2 sm:black items-center justify-center rounded-full border-[0.5px] border-lightBrown bg-black">
-                    <button className='text-2xl p-2 border-orange border-[1px] rounded-full text-white' onClick={toggleMenu}>
-                        <RxHamburgerMenu />
-                    </button>
+
+                {/* Mobile Menu Button */}
+                <button onClick={() => setMenuOpen(!menuOpen)} className='lg:hidden text-white border border-orange p-2 rounded-full ml-2'>
+                    <RxHamburgerMenu size={24} />
+                </button>
+
+                {/* Mobile Dropdown */}
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[90%] max-w-[400px] 
+                bg-black/80 backdrop-blur-md rounded-xl p-4 ${menuOpen ? 'block' : 'hidden'}`}>
+                    <NavbarLinks />
                 </div>
-            </nav>
+
+            </div>
+        </nav>
     )
 }
 
